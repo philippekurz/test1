@@ -1,0 +1,451 @@
+$primaire:#9356dc;
+$secondaire:#ff79da;
+$tertiaire:#99e2d0;
+$degrade: linear-gradient(180deg, $secondaire, $primaire);
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    // width: 375px;
+    margin: auto;
+}
+
+@keyframes loader {
+    0% {opacity: 1;}
+    100% {opacity: 0; visibility: hidden;}
+}
+
+@keyframes loading {
+    0% {transform: rotate(-360deg);}
+    100% {transform: rotate(0);}
+}
+
+.loader {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation: loader 1000ms 2000ms forwards;
+    &__gradient {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-image: $degrade;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: loading 1000ms infinite linear;
+    }
+    &__rond {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: white;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    text-align: center;    
+    h1 {
+        font-family: 'Shrikhand', cursive;
+    }
+}
+
+.search {
+    background-color: rgb(234, 234, 234);
+    padding: 17px 0 17px 0;
+    box-shadow: 0 8px 5px -5px rgb(206, 206, 206) inset;
+    text-align: center;
+    a, input {
+        color: rgb(53, 53, 53);            
+    }
+    input {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+        margin-left: 15px;
+        border: none;
+        background-color: rgb(234, 234, 234);
+    }
+}
+
+.explorer {
+    background-color: rgb(246, 246, 246);
+    text-align: center;
+    padding: 20px 30px 60px 30px;
+    h2 {
+        font-size: 1.7em;
+    }
+    p {
+        color: rgb(77, 77, 77);
+    }
+}
+
+.btn {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 30px;
+    background-image: linear-gradient(180deg, $secondaire, $primaire);
+    box-shadow: 0 5px 5px rgb(206, 206, 206);
+    &:hover {
+        background-image: linear-gradient(180deg, lighten($secondaire, 5), lighten($primaire, 5));
+        box-shadow: 0 10px 10px rgb(206, 206, 206);
+    }
+}
+
+.fonctionnement {
+    h2 {
+        margin-left: 20px;
+    }
+    &__etapes {
+        display: flex;
+        background-color: rgb(246, 246, 246);
+        margin: 0 20px 30px 20px;
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: 0 5px 5px rgb(206, 206, 206);
+        align-items: center;
+        span {
+            background-color: $primaire;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-left: -30px;
+        }
+        i {
+            margin: 0 25px;
+            font-size: 1.3em;
+            color: rgb(126, 126, 126);
+        } 
+        p {
+            font-weight: bold;
+        }
+        &:hover {
+            background-color: rgb(245, 237, 255);
+            i {
+                color: $primaire;
+            }
+        }
+    }
+}
+
+.restaurant {
+    background-color: rgb(246, 246, 246);
+    padding: 50px 0;
+    h2 {
+        margin-left: 20px;
+    }
+    &__cards {
+        width: 90%;
+        height: 250px;
+        margin: auto;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 0 5px 5px rgb(206, 206, 206);
+        position: relative;
+        img {
+            height: 70%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+        span {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: $tertiaire;
+            color: rgb(0, 135, 102);
+            padding: 5px 8px 5px 8px;
+            font-size: 0.8em;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        h3 {
+            margin: 10px 0 0 10px;
+        }
+        p {
+            margin: 5px 0 0 10px;
+        }
+        .coeur {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            font-size: 1.5em;
+        }
+    }
+}
+
+footer {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    padding: 10px 0 20px 0;
+    h2 {
+        font-family: 'Shrikhand', cursive;
+        margin-left: 20px;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    a {
+        color: white;
+    }
+    i {
+        margin-right: 10px;
+    }
+}
+
+.header_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    a {
+        font-size: 1.5em;
+        color: rgb(90, 90, 90);
+        position: absolute;
+        left: 30px;
+        top: 30px;
+    }
+}
+
+.background {
+    width: 100%;
+    height: 300px;
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@keyframes menu_anim {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@for $i from 1 to 11 {
+    .load_menu--#{$i} {
+        animation: menu_anim 500ms both;
+        animation-delay: 300ms * $i;
+    }
+}
+
+@keyframes test-anim {
+    from {width: 0%;}
+    to {width:20%;}
+}
+
+@keyframes test-plat {
+    from {width: 80%;}
+    to {width:65%;}
+}
+
+@keyframes test-prix {
+    from {width: 20%;}
+    to {width:15%;}
+}
+
+.main_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(246, 246, 246);
+    padding-bottom: 50px;
+    h1 {
+        font-family: 'Shrikhand', cursive;
+    }
+    .titre {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(246, 246, 246);
+        width: 100%;
+        margin-top: -100px;
+        border-radius: 30px 30px 0 0;
+        padding: 10px 20px 0 20px;
+        box-sizing: border-box;
+        font-size: 0.8em;
+        i {
+            font-size: 2em;
+        }
+    }
+    section {
+        background-color: rgb(246, 246, 246);
+        padding: 0 20px;
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+        article {
+            display: flex;
+            justify-content: space-between;
+            height: 70px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 5px rgb(206, 206, 206);
+            overflow: hidden;
+            cursor: pointer;
+            h3, p {
+                margin: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .plat {
+                width: 80%;
+                // transition-duration: 1000ms;
+                // transition-property: width;
+            }
+            .prix {
+                display: flex;
+                align-items: flex-end;
+                padding-right: 10px;
+                // transition-duration: 1000ms;
+                // transition-property: width;
+            }
+            .anim {
+                width: 0%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0 15px 15px 0;
+                // transition-duration: 1000ms;
+                // transition-property: width;
+            }
+            &:hover {
+                .plat {
+                    // width: 65%;
+                    animation: test-plat 1000ms both;
+                }
+                .prix {
+                    // width: 15%;
+                    animation: test-prix 1000ms both;
+                }
+                .anim {
+                    // width: 20%;
+                    animation: test-anim 1000ms both;
+                    background-color: $tertiaire;
+                    .fa-check-circle {
+                        transform: rotate(0);
+                    }
+                }
+            }
+        }
+    }
+    .btn {
+        width: 300px;
+        margin: auto;
+        margin-top: 30px;
+    }
+}
+
+.fa-check-circle {
+    font-size: 2em;
+    color: white;
+    transform: rotate(-360deg);
+    transition: transform 1000ms;
+}
+
+.coeur_plein {
+    margin-right: -29px;
+    opacity: 0;
+}
+
+@keyframes coeur_anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.coeur {
+    &:hover {
+        .fa-heart {
+            background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .coeur_plein {
+            animation: coeur_anim 1000ms forwards;
+        }
+    }
+}
+
+.barre_verte {
+    width: 50px;
+    height: 3px;
+    background-color: $tertiaire;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .restaurant__placement {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+            width: 50%;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .fonctionnement__placement {
+        display: flex;
+    }
+    .fonctionnement__etapes {
+        width: 33%;
+    }
+    .restaurant__placement {
+        a {
+            width: 25%;
+        }
+    }
+    .main_menu__placement {
+        display: flex;
+        section {
+            width: 33%;
+        }
+    }
+}
